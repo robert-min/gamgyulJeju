@@ -7,7 +7,7 @@ from django.urls import reverse
 class FamilyDetail(models.Model):
     id = models.IntegerField(primary_key=True, null=False)
     title = models.CharField(max_length=100)
-    img = models.ImageField(upload_to="family/%Y/%m/%d")
+    img = models.ImageField(upload_to="family")
     slug = models.SlugField(max_length=200, db_index=True, unique=True, allow_unicode=True, null=True)
 
     class Meta:
