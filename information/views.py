@@ -14,5 +14,11 @@ def show_family(request):
     return render(request, "information/family.html")
 
 def family_detail(request, family_slug=None):
-    family = get_object_or_404(FamilyDetail, slug=family_slug)
-    return render(request, 'information/family.html', {'family': family})
+    current_slug = None
+    families = FamilyDetail.objects.all()
+    cur_detail = FamilyDetail.objects.get(slug=family_slug)
+
+    if family_slug:
+        current_slug = get_object_or_404(FamilyDetail, slug=family_slug)
+
+    return render(request, 'information/family.html', {'families': families, 'current_slug': current_slug, 'cur_detail': cur_detail})

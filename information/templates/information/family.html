@@ -8,82 +8,90 @@
 <main>
     <div class="container-fluid px-4">
         <h3 class="mt-4">Gamgyul Family</h3>
-<!--        <ol class="breadcrumb mb-4">-->
-<!--            <li class="breadcrumb-item active">Dashboard</li>-->
-<!--        </ol>-->
+        <!--        <ol class="breadcrumb mb-4">-->
+        <!--            <li class="breadcrumb-item active">Dashboard</li>-->
+        <!--        </ol>-->
         <div class="row">
+            {% for f in families %}
             <div class="col-xl-2 col-md-6">
                 <div class="card  text-white mb-4" style="background-color: #F89B00;">
-<!--                    <div class="card-body">Primary Card</div>-->
+                    <!--                    <div class="card-body">Primary Card</div>-->
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="#">Geugjosaeng<br>(극조생류)</a>
+                        <a class="small text-white stretched-link" href="{{f.get_absolute_url}}">{{f.eng_title}} <br> {{f.kor_title}}</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-2 col-md-6">
-                <div class="card  text-white mb-4" style="background-color: #F89B00;">
-<!--                    <div class="card-body">Warning Card</div>-->
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="#">Josaeng<br>(조생류)</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                    </div>
-                </div>
+        {% endfor %}
             </div>
-            <div class="col-xl-2 col-md-6">
-                <div class="card  text-white mb-4" style="background-color: #F89B00;">
-<!--                    <div class="card-body">Success Card</div>-->
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="#">Mangam<br>(만감류)</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-2 col-md-6">
-                <div class="card  text-white mb-4" style="background-color: #F89B00;">
-<!--                    <div class="card-body">Danger Card</div>-->
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="#">Geumgam<br>(금감류)</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                    </div>
-                </div>
-            </div>
-                        <div class="col-xl-2 col-md-6">
-                <div class="card  text-white mb-4" style="background-color: #F89B00;">
-<!--                    <div class="card-body">Danger Card</div>-->
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="#">Orange<br>(오렌지류)</a>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-6">
-                <div class="card mb-4">
-                    <div class="card-header">
-<!--                        <i class="fas fa-chart-area me-1"></i>-->
-                        {{family.title}}
-                    </div>
-                    <div class="card-body">
-                        <img src="{{family.img.url}}" alt="{{family.id}}" style="width: 100%;"/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6">
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-chart-bar me-1"></i>
-                        Bar Chart Example
-                    </div>
-                    <div class="card-body">
-                        <canvas id="myBarChart" width="100%" height="40"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
+
+
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <!--                        <i class="fas fa-chart-area me-1"></i>-->
+                        {{cur_detail.eng_title}} {{cur_detail.kor_title}}
+                    </div>
+                    <div class="card-body" style="align-content: center">
+                        <img src="{{cur_detail.img.url}}" alt="{{cur_detail.id}}" style="width: 90%;"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="card mb-4" style="background-color: #ffb437; color: #ffffff">
+                    <div class="card-header" style="text-align: center; line-height: 150px;">
+                        <b>{{cur_detail.sub_title}}</b>
+                        <img src="{{cur_detail.sub_img.url}}" alt="{{cur_detail.id}}"  style="height: 150px; float: right;"/>
+                    </div>
+                    <div class="card-body">
+                            <b>[Appearance]</b>
+                            <p style="color: #ffffff;">{{cur_detail.appearance}}</p>
+                            <b>[Taste]</b>
+                            <p style="color: #ffffff;">{{cur_detail.taste}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 </main>
+<!--            </div>-->
+<!--            <div class="col-xl-2 col-md-6">-->
+<!--                <div class="card  text-white mb-4" style="background-color: #F89B00;">-->
+<!--&lt;!&ndash;                    <div class="card-body">Warning Card</div>&ndash;&gt;-->
+<!--                    <div class="card-footer d-flex align-items-center justify-content-between">-->
+<!--                        <a class="small text-white stretched-link" href="#">Josaeng<br>(조생류)</a>-->
+<!--                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-xl-2 col-md-6">-->
+<!--                <div class="card  text-white mb-4" style="background-color: #F89B00;">-->
+<!--&lt;!&ndash;                    <div class="card-body">Success Card</div>&ndash;&gt;-->
+<!--                    <div class="card-footer d-flex align-items-center justify-content-between">-->
+<!--                        <a class="small text-white stretched-link" href="#">Mangam<br>(만감류)</a>-->
+<!--                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-xl-2 col-md-6">-->
+<!--                <div class="card  text-white mb-4" style="background-color: #F89B00;">-->
+<!--&lt;!&ndash;                    <div class="card-body">Danger Card</div>&ndash;&gt;-->
+<!--                    <div class="card-footer d-flex align-items-center justify-content-between">-->
+<!--                        <a class="small text-white stretched-link" href="#">Geumgam<br>(금감류)</a>-->
+<!--                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--                        <div class="col-xl-2 col-md-6">-->
+<!--                <div class="card  text-white mb-4" style="background-color: #F89B00;">-->
+<!--&lt;!&ndash;                    <div class="card-body">Danger Card</div>&ndash;&gt;-->
+<!--                    <div class="card-footer d-flex align-items-center justify-content-between">-->
+<!--                        <a class="small text-white stretched-link" href="#">Orange<br>(오렌지류)</a>-->
+<!--                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
 
 
 <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"-->
