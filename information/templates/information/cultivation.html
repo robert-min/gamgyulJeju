@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Cultivation Status
+{% endblock %}
+
+{% block content %}
+
+<main>
+        <h3 class="mt-4">감귤 재배 현황 한눈에 보기</h3>
+        <!--        <ol class="breadcrumb mb-4">-->
+        <!--            <li class="breadcrumb-item active">Dashboard</li>-->
+        <!--        </ol>-->
+        <div style="padding: 15px 0px 0px 0px;"></div>
+
+        <div class="row">
+            {% for c in cultivations %}
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area me-1"></i>
+                        {{c.eng_title}} {{c.kor_title}}
+                    </div>
+                    <div class="card-body" style="align-content: center">
+                        <img src="{{c.img.url}}" alt="{{c.id}}" style="width: 100%; height: 100%;"/>
+                    </div>
+                </div>
+            </div>
+                    {% endfor %}
+        </div>
+
+
+</main>
+
+
+{% endblock %}

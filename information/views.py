@@ -11,7 +11,10 @@ def show_basic_info(request):
     return render(request, "information/home.html")
 
 def show_family(request):
-    return render(request, "information/family.html")
+    families = FamilyDetail.objects.all()
+    cur_detail = FamilyDetail.objects.get(slug="geugjosaeng")
+
+    return render(request, "information/family.html", {'families': families, 'cur_detail': cur_detail})
 
 def family_detail(request, family_slug=None):
     current_slug = None
@@ -22,3 +25,7 @@ def family_detail(request, family_slug=None):
         current_slug = get_object_or_404(FamilyDetail, slug=family_slug)
 
     return render(request, 'information/family.html', {'families': families, 'current_slug': current_slug, 'cur_detail': cur_detail})
+
+def show_cultivation(request):
+    cultivations = CultivationStatus.objects.all()
+    return render(request, 'information/cultivation.html', {'cultivations': cultivations})
