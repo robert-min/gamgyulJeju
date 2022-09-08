@@ -9,8 +9,8 @@ class ActivityMap(models.Model):
     period = models.CharField(max_length=200, null=True)
     how = models.CharField(max_length=50, null=True)
     website = models.CharField(max_length=100, null=True)
-    lat = models.IntegerField(null=True)
-    long = models.IntegerField(null=True)
+    lat = models.FloatField(null=True)
+    long = models.FloatField(null=True)
 
     class Meta:
         ordering = ['id']
