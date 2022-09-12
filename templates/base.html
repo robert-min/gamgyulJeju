@@ -37,7 +37,7 @@
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">What is Gamgyul?</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#">About</a>
+                            <a href="{% url 'information:info' %}">About</a>
                         </li>
                         <li>
                             <a href="{% url 'information:family' %}">Gamgyul Family</a>
@@ -46,7 +46,7 @@
                             <a href="{% url 'information:cultivation' %}">Cultivation Status</a>
                         </li>
                         <li>
-                            <a href="#">For Your Health</a>
+                            <a href="{% url 'information:health' %}">For Your Health</a>
                         </li>
                     </ul>
                 </li>

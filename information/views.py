@@ -29,3 +29,6 @@ def family_detail(request, family_slug=None):
 def show_cultivation(request):
     cultivations = CultivationStatus.objects.all()
     return render(request, 'information/cultivation.html', {'cultivations': cultivations})
+
+def show_health(request):
+    return render(request, "information/health.html")
