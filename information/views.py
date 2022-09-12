@@ -8,7 +8,7 @@ from django.shortcuts import render, get_object_or_404
 # Create your views here.
 
 def show_basic_info(request):
-    return render(request, "information/home.html")
+    return render(request, "information/about.html")
 
 def show_family(request):
     families = FamilyDetail.objects.all()
