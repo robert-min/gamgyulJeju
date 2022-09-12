@@ -9,3 +9,6 @@ from django.shortcuts import render, get_object_or_404
 def show_activity(request):
     activities = ActivityMap.objects.all()
     return render(request, "activity/activity.html", {"activities": activities})
+
+def show_souvenir(request):
+    return render(request, "activity/souvenir.html")
