@@ -12,3 +12,6 @@ def show_activity(request):
 
 def show_souvenir(request):
     return render(request, "activity/souvenir.html")
+
+def show_price(request):
+    return render(request, "activity/price.html")

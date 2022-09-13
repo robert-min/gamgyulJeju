@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Cultivation Status
+{% endblock %}
+
+{% block content %}
+
+<main>
+    <h3 class="mt-4">Price Information (2021)</h3>
+    <!--        <ol class="breadcrumb mb-4">-->
+    <!--            <li class="breadcrumb-item active">Dashboard</li>-->
+    <!--        </ol>-->
+    <div style="padding: 15px 0px 0px 0px;"></div>
+
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-chart-area me-1"></i>
+                    Seasonal Comparison
+                </div>
+                <div class="card-body" style="align-content: center; text-align: center;">
+                    <img src="../media/price/seasonal_graph.png" alt="." style="width: 80%; padding-bottom: 50px;"/>
+                    <img src="../media/price/seasonal_frame.png" alt="." style="width: 30%;"/>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-chart-area me-1"></i>
+                    Monthly Comparison
+                </div>
+                <div class="card-body" style="align-content: center; text-align: center;">
+                    <img src="../media/price/monthly_graph.png" alt="." style="width: 80%; padding-bottom: 50px;"/>
+                    <img src="../media/price/montly_frame.png" alt="." style="width: 100%;"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</main>
+
+
+{% endblock %}
